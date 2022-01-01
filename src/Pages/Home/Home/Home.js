@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import NavigationBar from '../../Shared/NavigationBar/NavigationBar';
 import Banner from '../Banner/Banner';
 
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <NavigationBar></NavigationBar>
             <Banner></Banner>
+            <Footer></Footer>
         </div>
     );
 };

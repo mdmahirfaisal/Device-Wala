@@ -6,7 +6,7 @@ import { Carousel } from 'react-bootstrap';
 
 const Banner = () => {
     return (
-        <>
+        <div id='home'>
             <Carousel fade>
                 <Carousel.Item>
                     <div className="slide1">
@@ -66,7 +66,7 @@ const Banner = () => {
 
             </Carousel>
 
-        </>
+        </div>
     );
 };
 

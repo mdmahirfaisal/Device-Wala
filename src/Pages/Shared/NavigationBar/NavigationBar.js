@@ -75,14 +75,14 @@ const NavigationBar = () => {
                         as={HashLink} to="/"
                         className="ml-md-5"
                         style={{ color: "#3a4256", fontSize: "1.55rem" }}>
-                        {/* <img
-                        alt="Logo"
-                        src=""
-                        width="40"
-                        height="40"
-                        className="d-inline-block align-top"
-                    />{' '} */}
-                        <strong>Mobile Bazar</strong>
+                        <img
+                            alt="Logo"
+                            src="https://i.ibb.co/GQ92S57/logo-removebg-preview.png"
+                            width="40"
+                            height="40"
+                            className="d-inline-block align-top"
+                        />{'   '}
+                        <strong>Device Wala</strong>
                     </Navbar.Brand>
 
                     <Navbar.Toggle onClick={() => setCollapsed(!isCollapsed ? 'show' : null)} aria-controls="responsive-navbar-nav" />
