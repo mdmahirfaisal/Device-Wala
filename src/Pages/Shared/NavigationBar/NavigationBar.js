@@ -197,7 +197,7 @@ const NavigationBar = () => {
                                 height="40"
                                 className="d-inline-block align-top"
                             />{'   '}
-                            <strong>ELECTRO HOUSE</strong>
+                            <strong>Device Wala</strong>
                         </Navbar.Brand>
                         <Nav>
                             <a href="javascript:void(0);" className="ic menu" tabindex="1">
