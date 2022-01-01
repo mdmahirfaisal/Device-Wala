@@ -1,0 +1,63 @@
+
+.slide1{
+    background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://i.ibb.co/nznjq4g/Banner-phone.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .slide2{
+    background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://i.ibb.co/6t09JZ4/banner-phone-3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .slide3{
+    background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('https://i.ibb.co/vhjCrr3/banner-phone-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  
+  .banner-text h5{
+  font-size: 35px;
+  font-weight: bold;
+  }
+  .banner-text h1{
+    font-size: 65px;
+    font-weight: bold;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .slide1{
+      height: 100%;
+    }
+    .slide2{
+      height: 100%;
+    }
+    .slide3{
+     height: 100%;
+    }
+  
+    .banner-text{
+      background-color: rgba(191, 191, 191, 0.193);
+      padding: 20px;
+      border-radius: 20px;
+      margin-bottom: 200px;
+    }
+  
+    .banner-text h5{
+      font-size: 30px;
+      font-weight: 300;
+      }
+      .banner-text h1{
+        font-size: 35px;
+        font-weight: bolder;
+      }
+  }
