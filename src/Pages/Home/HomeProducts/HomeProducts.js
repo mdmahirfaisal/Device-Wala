@@ -94,8 +94,8 @@ const HomeProducts = () => {
                         productsData.map(product => <div className='col-12 col-md-6 col-lg-4'>
                             <div class="container page-wrapper ">
                                 <div class="page-inner">
-                                    <div class="row  mb-5">
-                                        <div class="el-wrapper">
+                                    <div class="row mb-5">
+                                        <div class="el-wrapper shadow-sm" style={{ borderRadius: '15px 15px 0px 0px' }}>
                                             <div class="box-up">
                                                 <img class="img" src={product.img} width="60%" style={{ maxHeight: '300px' }} alt="Product img" />
                                                 <div class="img-info">
