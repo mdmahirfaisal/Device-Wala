@@ -4,7 +4,7 @@ import { HashLink } from 'react-router-hash-link';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='mt-5'>
             <div className="footer-gray">
                 <div className="footer-custom">
                     <div className="footer-lists">
