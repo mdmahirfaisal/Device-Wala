@@ -86,12 +86,12 @@ const NavigationBar = () => {
                             <strong>Device Wala</strong>
                         </Navbar.Brand>
                         <Nav>
-                            <a href="javascript:void(0);" className="ic menu" tabindex="1">
+                            <a href="#;" className="ic menu" tabIndex="1">
                                 <span className="line"></span>
                                 <span className="line "></span>
                                 <span className="line "></span>
                             </a>
-                            <a href="javascript:void(0);" className="ic close"></a>
+                            <a href="#;" className="ic close"></a>
                             <ul className="main-nav">
                                 <li className="top-level-link">
                                     <HashLink to="/home#home" className={isMobile ? 'text-light text-decoration-none' : 'text-dark text-decoration-none'}><span>Home</span></HashLink>
