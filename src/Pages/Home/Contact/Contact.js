@@ -2,12 +2,9 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <div>
-            <div className="container d-flex justify-content-center align-items-center">
-	
-	
-
-	<div className="col-md-6 mx-5">
+        <div className='container'>
+            <div className="row">
+            <div className="col-md-6">
     <svg className='img-fluid' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 563" fill="none">
 			<g id="Image">
 					<g id="g14">
@@ -336,11 +333,7 @@ const Contact = () => {
 			</div>
 	</form>
     </div>
-	
-	
-	
-	
-</div>
+            </div>
         </div>
     );
 };
