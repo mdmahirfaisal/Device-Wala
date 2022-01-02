@@ -2,7 +2,7 @@ import React from 'react';
 import Bounce from 'react-reveal/Bounce';
 const AboutUs = () => {
     return (
-        <div style={{height:'100vh', display:'flex', alignItems:'center', justifyContent:'center'}}>
+        <div style={{minHeight:'100vh', display:'flex', alignItems:'center', justifyContent:'center'}}>
             <div>
                 <h5 className='text-black-50 my-1 fw-bold'>ABOUT US</h5>
                 <h1 className='fw-bold '>We are <span style={{color: '#FF5E14'}}>DeviceWala</span></h1>
