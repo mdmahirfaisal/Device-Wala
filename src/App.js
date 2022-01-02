@@ -3,23 +3,29 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home/Home/Home';
 import NotFound from './Pages/Login/NotFound/NotFound';
+import Login from './Pages/Login/Login/Login';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
 
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/home" element={<Home />} />
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/home" element={<Home />} />
 
-          {/* <Route path="/placeOrder/:detailId" element={} /> */}
+
+            {/* <Route path="/placeOrder/:detailId" element={} /> */}
 
 
-          {/* Dashboard route  */}
+            {/* Dashboard route  */}
 
-          {/* <Route path="/dashboard" element={<PrivateRoute><DashboardHome /></PrivateRoute>}>
-            <Route path="/dashboard/userProfile" element={<UserProfile />} />
+            <Route path="/dashboard" element={<PrivateRoute><DashboardHome /></PrivateRoute>}>
+              {/* <Route path="/dashboard/userProfile" element={<UserProfile />} />
             <Route path={`/dashboard/addProduct`} element={<AddProduct></AddProduct>} />
 
             <Route path={`/dashboard/manageProduct`} element={<ManageProduct />} />
@@ -34,15 +40,17 @@ function App() {
 
             <Route path={`/dashboard/addReview`} element={<AddReview></AddReview>} />
 
-            <Route exact path="/dashboard" element={<UserProfile />} />
-          </Route> */}
+            <Route exact path="/dashboard" element={<UserProfile />} /> */}
+            </Route>
 
-          {/* <Route path="/login" element={<Login />} /> */}
+            <Route path="/login" element={<Login />} />
 
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>    </div>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
+    </div>
   );
 }
 
