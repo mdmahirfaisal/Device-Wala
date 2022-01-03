@@ -199,7 +199,7 @@ const DashboardHome = () => {
                     {
                         !admin && <>
                             <ListItem button>
-                                <HashLink to="/products" className='text-decoration-none w-100 text-dark fw-bold'>PRODUCTS</HashLink>
+                                <HashLink to="/dashboard" className='text-decoration-none w-100 text-dark fw-bold'>PRODUCTS</HashLink>
                             </ListItem>
 
                             <ListItem button>

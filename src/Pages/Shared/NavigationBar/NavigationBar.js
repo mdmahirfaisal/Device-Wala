@@ -188,6 +188,9 @@ const NavigationBar = () => {
                                 <li className="top-level-link">
                                     <HashLink to="/home#home" className={isMobile ? 'text-light text-decoration-none' : 'text-dark text-decoration-none'}><span>Contact</span></HashLink>
                                 </li>
+                                <li className="top-level-link">
+                                    <HashLink to="/dashboard" className={isMobile ? 'text-light text-decoration-none' : 'text-dark text-decoration-none'}><span>Dashboard</span></HashLink>
+                                </li>
                             </ul>
                         </Nav>
 
@@ -217,7 +220,6 @@ const NavigationBar = () => {
                         </Nav>
                     </Container>
                 </Navbar>
-
             </header>
         </>
     );
