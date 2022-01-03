@@ -46,7 +46,7 @@ const HomeProducts = () => {
                                     <div className="row mb-5">
                                         <div className="el-wrapper shadow-sm" style={{ borderRadius: '15px 15px 0px 0px' }}>
                                             <div className="box-up">
-                                                <img className="img" src={product.img} width="60%" style={{ maxHeight: '300px' }} alt="Product img" />
+                                                <img className="img img-fluid" src={product.img}  style={{ maxHeight: '300px', width: '100%' }} alt="Product img" />
                                                 <div className="img-info">
                                                     <div className="info-inner">
                                                         <span className="p-name">{product.name}</span>
