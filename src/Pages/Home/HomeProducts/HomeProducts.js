@@ -69,8 +69,8 @@ const HomeProducts = () => {
 
                 {
                     displayProduct.length === 0 && <div className='py-3'>
-                        <h2 className='text-danger'>No Prodruct Found...........</h2>
-                        <h3 className='text-success'>Please Search by Product Name, Brand Name, Category </h3>
+                     
+                        <img className='img-fluid' src="https://plantechbd.com/admin_area/product_images/no-magento-product-found.jpg" alt="" />
                     </div>
                 }
                 <div className="row">
