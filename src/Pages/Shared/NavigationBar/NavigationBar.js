@@ -96,6 +96,22 @@ const NavigationBar = () => {
                                 <li className="top-level-link">
 
                                     <HashLink to="/home#home" className={isMobile ? 'text-light text-decoration-none' : 'text-dark text-decoration-none'}><span>Home</span></HashLink>
+                                    <div className="sub-menu-block">
+                                        <div className="row">
+                                            <div className="col">
+                                                <h2 className="sub-menu-head">Home</h2>
+                                                <ul className="sub-menu-lists">
+                                                    <li><Nav.Link>About</Nav.Link></li>
+                                                    <li><Nav.Link>Products</Nav.Link></li>
+                                                    <li><Nav.Link>Contact</Nav.Link></li>
+                                                    <li><Nav.Link>New Born</Nav.Link></li>
+                                                    <li><Nav.Link>View All</Nav.Link></li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
                                 </li>
 
                                 <li className="top-level-link">
