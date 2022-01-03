@@ -19,7 +19,7 @@ const HomeProducts = () => {
     const handleSearch = (e) => {
         const searchText = e.target.value;
         const matchedProduct = products?.filter((data) =>
-            data.name.toLowerCase().includes(searchText?.toLowerCase())
+            data.name.toLowerCase().includes(searchText?.toLowerCase()) || data.category.toLowerCase().includes(searchText?.toLowerCase()) || data.brand_name.toLowerCase().includes(searchText?.toLowerCase())
         );
         setDisplayProduct(matchedProduct);
         console.log(searchText);
