@@ -66,17 +66,24 @@ const HomeProducts = () => {
 
                     </ul>
                 </div>
+
+                {
+                    displayProduct.length === 0 && <div className='py-3'>
+                        <h2 className='text-danger'>No Prodruct Found...........</h2>
+                        <h3 className='text-success'>Please Search by Product Name, Brand Name, Category </h3>
+                    </div>
+                }
                 <div className="row">
                     {
 
-                        loading? <Loader />: 
+                        loading ? <Loader /> :
                             displayProduct?.map(product => <div className='col-12 col-md-6 col-lg-4' key={product._id}>
                                 <div className="container page-wrapper ">
                                     <div className="page-inner">
                                         <div className="row mb-5">
                                             <div className="el-wrapper shadow-sm" style={{ borderRadius: '15px 15px 0px 0px' }}>
                                                 <div className="box-up">
-                                                    <img className="img" src={product.img} style={{width: "100%" , maxHeight: '300px' }} alt="Product img" />
+                                                    <img className="img" src={product.img} style={{ width: "100%", maxHeight: '300px' }} alt="Product img" />
                                                     <div className="img-info">
                                                         <div className="info-inner">
                                                             <span className="p-name">{product.name}</span>
@@ -84,16 +91,16 @@ const HomeProducts = () => {
                                                         </div>
                                                         <div className="a-size">Available Products : <span className="size">All Products Available</span></div>
 
-                   
+
 
                                                     </div>
                                                 </div>
-    
+
                                                 <div className="box-down">
                                                     <div className="h-bg">
                                                         <div className="h-bg-inner"></div>
                                                     </div>
-    
+
                                                     <Link className="cart" to={`/product/${product._id}`}>
                                                         <span className="price">$ {product.price}</span>
                                                         <span className="add-to-cart">
@@ -107,7 +114,7 @@ const HomeProducts = () => {
                                 </div>
                             </div>
                             )
-                        
+
                     }
                 </div>
             </div>
