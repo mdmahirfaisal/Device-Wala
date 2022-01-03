@@ -44,6 +44,7 @@ const HomeProducts = () => {
                 />
                 <div className="row">
                     {
+
                         loading? <Loader />: 
                             displayProduct?.map(product => <div className='col-12 col-md-6 col-lg-4' key={product._id}>
                                 <div className="container page-wrapper ">
@@ -58,6 +59,9 @@ const HomeProducts = () => {
                                                             <span className="p-company"></span>
                                                         </div>
                                                         <div className="a-size">Available Products : <span className="size">All Products Available</span></div>
+
+                   
+
                                                     </div>
                                                 </div>
     
