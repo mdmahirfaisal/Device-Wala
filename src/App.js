@@ -7,6 +7,9 @@ import Login from './Pages/Login/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
+import NavigationBar from './Pages/Shared/NavigationBar/NavigationBar';
+import Footer from './Pages/Shared/Footer/Footer';
+import ProductDetail from './Pages/ProductDetails/ProductDetail';
 
 
 
@@ -15,6 +18,7 @@ function App() {
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
+        <NavigationBar></NavigationBar>
           <Routes>
             <Route path="/home" element={<Home />} />
 
@@ -44,10 +48,11 @@ function App() {
             </Route>
 
             <Route path="/login" element={<Login />} />
-
+            <Route path="/product/:id" element={<ProductDetail />} />
             <Route exact path="/" element={<Home />} />
             <Route exact path="*" element={<NotFound />} />
           </Routes>
+          <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
     </div>

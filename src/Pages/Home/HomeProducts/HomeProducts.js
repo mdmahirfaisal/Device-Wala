@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './HomeProducts.css';
 
 const HomeProducts = () => {
@@ -61,12 +62,12 @@ const HomeProducts = () => {
                                                     <div className="h-bg-inner"></div>
                                                 </div>
 
-                                                <a className="cart" href="home">
+                                                <Link className="cart" to={`/product/${product._id}`}>
                                                     <span className="price">$ {product.price}</span>
                                                     <span className="add-to-cart">
-                                                        <span className="txt btn btn-danger">Add in cart</span>
+                                                        <span className="txt btn btn-danger">Buy Now</span>
                                                     </span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
