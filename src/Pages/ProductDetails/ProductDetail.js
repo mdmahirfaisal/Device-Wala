@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Loader from "../Shared/Loader/Loader";
 
 const ProductDetail = () => {
+  const [loading, setLoading] = useState(false)
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [similarProduct, setSimilarProduct] = useState([])
@@ -14,9 +16,13 @@ const ProductDetail = () => {
       .then((data) => setProduct(data));
   }, [id]);
   useEffect(() => {
+    setLoading(true)
     fetch(`http://localhost:5000/products/${product?.category}`)
       .then((res) => res.json())
-      .then((data) => setSimilarProduct(data));
+      .then((data) => {
+        setLoading(false)
+        setSimilarProduct(data)
+      });
   }, [product?.category]);
 
   return (
@@ -55,12 +61,12 @@ const ProductDetail = () => {
       </div>
       <div className="row">
           <h2>Similar Products</h2>
-          {similarProduct?.map(similar => <div className="col-md-4">
-              <Link to={`/product/${id}`}>
+          {loading? <Loader /> : similarProduct?.map(similar => <div className="col-md-4">
+              <Link to={`/product/${similar?._id}`}>
               <Card className="text-start my-2" style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={similar?.img} />
                 <Card.Body>
-                    <Card.Title>{similar?.name}</Card.Title>
+                    <Link to={`/product/${similar?._id}`}>{similar?.name}</Link>
                     <Card.Text>
                     {similar?.brand_name}
                     </Card.Text>
