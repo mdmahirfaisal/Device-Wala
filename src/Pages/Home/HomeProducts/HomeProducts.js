@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './HomeProducts.css';
 
 const HomeProducts = () => {
@@ -19,7 +20,7 @@ const HomeProducts = () => {
     const handleSearch = (e) => {
         const searchText = e.target.value;
         const matchedProduct = products?.filter((data) =>
-            data.name.toLowerCase().includes(searchText?.toLowerCase())
+            data.name.toLowerCase().includes(searchText?.toLowerCase()) || data.category.toLowerCase().includes(searchText?.toLowerCase()) || data.brand_name.toLowerCase().includes(searchText?.toLowerCase())
         );
         setDisplayProduct(matchedProduct);
         console.log(searchText);
@@ -46,7 +47,7 @@ const HomeProducts = () => {
                                     <div className="row mb-5">
                                         <div className="el-wrapper shadow-sm" style={{ borderRadius: '15px 15px 0px 0px' }}>
                                             <div className="box-up">
-                                                <img className="img" src={product.img} width="60%" style={{ maxHeight: '300px' }} alt="Product img" />
+                                                <img className="img img-fluid" src={product.img}  style={{ maxHeight: '300px', width: '100%' }} alt="Product img" />
                                                 <div className="img-info">
                                                     <div className="info-inner">
                                                         <span className="p-name">{product.name}</span>
@@ -61,12 +62,12 @@ const HomeProducts = () => {
                                                     <div className="h-bg-inner"></div>
                                                 </div>
 
-                                                <a className="cart" href="home">
+                                                <Link className="cart" to={`/product/${product._id}`}>
                                                     <span className="price">$ {product.price}</span>
                                                     <span className="add-to-cart">
-                                                        <span className="txt btn btn-danger">Add in cart</span>
+                                                        <span className="txt btn btn-danger">Buy Now</span>
                                                     </span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
