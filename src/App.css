@@ -18,3 +18,9 @@ body{
   margin-top: 100px !important;
 }
 
+@media only screen and (max-width:768px) {
+  .update-modal{
+    width: 95% !important;
+  }
+}
+
