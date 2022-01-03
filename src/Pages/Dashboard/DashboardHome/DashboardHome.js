@@ -213,6 +213,10 @@ const DashboardHome = () => {
                             <ListItem button>
                                 <HashLink to="/dashboard/addReview" className='text-decoration-none w-100 text-dark fw-bold'>RATE US</HashLink>
                             </ListItem>
+
+                            <ListItem button>
+                                <HashLink to="/dashboard/addReview" className='text-decoration-none w-100 text-dark fw-bold'>MY WISH LIST</HashLink>
+                            </ListItem>
                         </>
                     }
 

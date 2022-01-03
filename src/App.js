@@ -7,6 +7,11 @@ import Login from './Pages/Login/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
+import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
+import DashboardChart from './Pages/Dashboard/DashboardChart/DashboardChart';
+import UserProfile from './Pages/Dashboard/UserProfile/UserProfile';
+import ManageProduct from './Pages/Dashboard/ManageProduct/ManageProduct';
+// import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
 
 
 
@@ -25,22 +30,24 @@ function App() {
             {/* Dashboard route  */}
 
             <Route path="/dashboard" element={<PrivateRoute><DashboardHome /></PrivateRoute>}>
-              {/* <Route path="/dashboard/userProfile" element={<UserProfile />} />
-            <Route path={`/dashboard/addProduct`} element={<AddProduct></AddProduct>} />
+              <Route path="/dashboard/userProfile" element={<UserProfile />} />
 
-            <Route path={`/dashboard/manageProduct`} element={<ManageProduct />} />
+              {/* <Route path={`/dashboard/addProduct`} element={<AddProduct></AddProduct>} /> */}
+              <Route path={`/dashboard/manageProduct`} element={<ManageProduct />} />
+              {/* 
 
             <Route path={`/dashboard/makeAdmin`} element={<MakeAdmin />} />
 
             <Route path={`/dashboard/editProduct/:id`} element={<EditProduct></EditProduct>} />
 
-            <Route path={`/dashboard/manageOrders`} element={<ManageOrders />} />
+            <Route path={`/dashboard/manageOrders`} element={<ManageOrders />} /> */}
 
-            <Route path={`/dashboard/myOrders`} element={<MyOrders></MyOrders>} />
+              <Route path={`/dashboard/myOrders`} element={<MyOrders></MyOrders>} />
 
-            <Route path={`/dashboard/addReview`} element={<AddReview></AddReview>} />
+              {/* <Route path={`/dashboard/addReview`} element={<AddReview></AddReview>} /> */}
 
-            <Route exact path="/dashboard" element={<UserProfile />} /> */}
+              <Route exact path="/dashboard" element={<DashboardChart />} />
+
             </Route>
 
             <Route path="/login" element={<Login />} />
