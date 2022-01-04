@@ -41,22 +41,38 @@ const HomeProducts = () => {
         <div className='bg-light'>
             <h1 className='py-4'>OUR PRODUCTS</h1>
 
+
             <div className="container">
-                <input
+                {/* <input
                     className="form-control py- my-3"
                     onChange={handleSearch}
                     type="text"
                     placeholder="Search products"
-                />
+                /> */}
+                {/* ///////////////////////////////////////////// */}
+                <div className="search-Card">
+                    <div className="CardInner">
+                        <label className='search-label'>Search product by name</label>
+                        <div className="search-container">
+                            <div className="search-Icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" className="feather feather-search">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                </svg>
+                            </div>
+                            <div className="InputContainer">
+                                <input className='search-input' onChange={handleSearch} placeholder="Search products..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-
-
-
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                {/* ///////////////////////////////////////// */}
+                <div className="dropdown">
+                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Select Category
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><button onClick={() => { clickHandler('') }} className="dropdown-item">All</button></li>
                         <li><button onClick={() => { clickHandler('Mobile') }} className="dropdown-item">Mobile</button></li>
                         <li><button onClick={() => { clickHandler('Laptop') }} className="dropdown-item">Laptop</button></li>
