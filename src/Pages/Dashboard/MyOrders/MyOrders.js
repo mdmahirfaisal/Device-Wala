@@ -17,7 +17,7 @@ const MyOrders = () => {
   const [bookings, setBookings] = React.useState([]);
 
   React.useEffect(() => {
-    const url = `http://localhost:5000/ordersData?email=${user.email}`;
+    const url = `https://powerful-wildwood-39472.herokuapp.com/ordersData?email=${user.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setBookings(data))
@@ -51,7 +51,7 @@ const MyOrders = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          const url = `http://localhost:5000/${id}`;
+          const url = `https://powerful-wildwood-39472.herokuapp.com/${id}`;
           fetch(url, {
             method: "DELETE",
           })
