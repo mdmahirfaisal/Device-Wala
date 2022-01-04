@@ -15,6 +15,8 @@ import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import AddReview from './Pages/Dashboard/AddReview/AddReview';
 
+import ProductDetailpage from './Pages/ProductDetails/ProductDetailpage';
+import Ordernow from './Pages/ProductDetails/Ordernow';
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
+        
           <Routes>
             <Route path="/home" element={<Home />} />
 
@@ -49,7 +52,8 @@ function App() {
             </Route>
 
             <Route path="/login" element={<Login />} />
-            {/* <Route path="/product/:id" element={<ProductDetail />} /> */}
+            <Route path="/order/product/:id" element={<PrivateRoute><Ordernow /></PrivateRoute>} />
+            <Route path="/product/:id" element={<ProductDetailpage />} />
             <Route exact path="/" element={<Home />} />
             <Route exact path="*" element={<NotFound />} />
           </Routes>

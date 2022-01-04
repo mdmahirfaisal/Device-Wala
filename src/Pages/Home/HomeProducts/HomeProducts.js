@@ -10,7 +10,7 @@ const HomeProducts = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:5000/products')
+        fetch('https://powerful-wildwood-39472.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setLoading(false)
