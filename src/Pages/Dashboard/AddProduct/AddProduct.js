@@ -34,6 +34,8 @@ const AddProduct = () => {
         const data = {
             name: productData.name,
             price: productData.price,
+            category: productData.category,
+            brand_name: productData.brand,
             description: productData.description,
             img: productImg
         };
@@ -94,6 +96,18 @@ const AddProduct = () => {
                         label="Product Price"
                         required
                         type="number" {...register("price")}
+                        variant="standard" />
+
+                    <TextField className="col-12 col-md-5 ms-md-2"
+                        label="Product Category"
+                        required
+                        {...register("category")}
+                        variant="standard" />
+
+                    <TextField className="col-12 col-md-5 ms-md-2"
+                        label="Brand"
+                        required
+                        {...register("brand")}
                         variant="standard" />
 
                     <Form.Label className="text-start  mt-3">Product image</Form.Label>

@@ -39,6 +39,7 @@ function App() {
 
               <Route path={`/dashboard/addProduct`} element={<AddProduct></AddProduct>} />
               <Route path={`/dashboard/manageProduct`} element={<ManageProduct />} />
+              
 
 
               <Route path={`/dashboard/makeAdmin`} element={<MakeAdmin />} />
