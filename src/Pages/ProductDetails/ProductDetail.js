@@ -11,13 +11,13 @@ const ProductDetail = () => {
   const [similarProduct, setSimilarProduct] = useState([])
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://powerful-wildwood-39472.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
   useEffect(() => {
     setLoading(true)
-    fetch(`http://localhost:5000/products/${product?.category}`)
+    fetch(`https://powerful-wildwood-39472.herokuapp.com/products/${product?.category}`)
       .then((res) => res.json())
       .then((data) => {
         setLoading(false)
@@ -47,6 +47,7 @@ const ProductDetail = () => {
             />{" "}
             <span className="border p-2" onClick={() => setQuantity(quantity + 1)}>+</span>
           </p>
+          <h3>Total Price: {product?.price * quantity}</h3>
           <Link style={{padding:'15px', display:'block', backgroundColor:'#FF5E14', textDecoration:'none', color: '#fff'}} to={`/order/product/${id}`}>Order Now</Link>
         </div>
         <div className="col-md-8 text-start">

@@ -13,6 +13,8 @@ import UserProfile from './Pages/Dashboard/UserProfile/UserProfile';
 import ManageProduct from './Pages/Dashboard/ManageProduct/ManageProduct';
 // import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
 
+import ProductDetailpage from './Pages/ProductDetails/ProductDetailpage';
+import Ordernow from './Pages/ProductDetails/Ordernow';
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
+        
           <Routes>
             <Route path="/home" element={<Home />} />
 
@@ -51,7 +54,8 @@ function App() {
             </Route>
 
             <Route path="/login" element={<Login />} />
-            {/* <Route path="/product/:id" element={<ProductDetail />} /> */}
+            <Route path="/order/product/:id" element={<PrivateRoute><Ordernow /></PrivateRoute>} />
+            <Route path="/product/:id" element={<ProductDetailpage />} />
             <Route exact path="/" element={<Home />} />
             <Route exact path="*" element={<NotFound />} />
           </Routes>
