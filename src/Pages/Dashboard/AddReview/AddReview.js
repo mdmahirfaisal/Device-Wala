@@ -1,5 +1,4 @@
 import { TextField, Button } from '@mui/material';
-import './AddReview.css';
 import axios from 'axios';
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
@@ -10,6 +9,7 @@ import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
 import { Form } from 'react-bootstrap';
 import useFirebase from '../../../hooks/useFirebase';
+import { useNavigate } from 'react-router-dom';
 
 const labels = {
     0.5: 'Useless',
@@ -32,6 +32,7 @@ const AddReview = () => {
     const [rateValue, setRateValue] = React.useState(0);
     const [hover, setHover] = React.useState(-1);
     const [userImg, setUserImg] = React.useState(null)
+    const navigate = useNavigate();
 
 
     // handle image upload 
@@ -68,7 +69,7 @@ const AddReview = () => {
         };
 
         reset()
-        axios.post('https://mysterious-waters-68327.herokuapp.com/review', data)
+        axios.post('http://localhost:5000/review', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {
@@ -80,6 +81,7 @@ const AddReview = () => {
                         timer: 3000
                     })
                     reset()
+                    navigate('/dashboard')
                 }
             })
             .catch(error => {
@@ -155,13 +157,11 @@ const AddReview = () => {
                             aria-label="minimum height"
                             minRows={5}
                             placeholder="Description"
-                            className="col-12  bg-white" style={{ borderRadius: '5px' }} {...register("description",)}
+                            className="col-12  bg-white" style={{ borderRadius: '5px' }} {...register("description")}
                         />
                     </div>
-                    <Button type="submit" variant="contained" className=" w-100  rounded-pill send-button">
-                        <div className="alt-send-button">
-                            <i className="fa fa-paper-plane"></i><span className="send-text">SEND REVIEW</span>
-                        </div>
+                    <Button type="submit" variant="contained" className=" w-100  rounded-pill ">
+                        SEND REVIEW
                     </Button>
                 </form>
             </div>

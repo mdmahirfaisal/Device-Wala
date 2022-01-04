@@ -69,7 +69,7 @@ const HomeProducts = () => {
 
                 {
                     displayProduct.length === 0 && <div className='py-3'>
-                     
+
                         <img className='img-fluid' src="https://plantechbd.com/admin_area/product_images/no-magento-product-found.jpg" alt="" />
                     </div>
                 }

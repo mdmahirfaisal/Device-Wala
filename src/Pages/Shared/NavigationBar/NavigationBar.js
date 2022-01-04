@@ -91,7 +91,7 @@ const NavigationBar = () => {
                                 <span className="line "></span>
                                 <span className="line "></span>
                             </a>
-                            <a href="#;" className="ic close"></a>
+                            <a href="" className="ic close"></a>
                             <ul className="main-nav">
                                 <li className="top-level-link">
 
