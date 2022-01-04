@@ -40,7 +40,7 @@ const AddProduct = () => {
 
         reset()
         setUploading(true)
-        axios.post('http://localhost:5000/products', data)
+        axios.post('https://powerful-wildwood-39472.herokuapp.com/products', data)
             .then(res => {
                 console.log(res);
                 setUploading(false)
