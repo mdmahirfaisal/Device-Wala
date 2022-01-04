@@ -199,10 +199,6 @@ const DashboardHome = () => {
                     {
                         !admin && <>
                             <ListItem button>
-                                <HashLink to="/dashboard" className='text-decoration-none w-100 text-dark fw-bold'>PRODUCTS</HashLink>
-                            </ListItem>
-
-                            <ListItem button>
                                 <HashLink to="/dashboard/myOrders" className='text-decoration-none w-100 text-dark fw-bold'>MY ORDERS</HashLink>
                             </ListItem>
 
@@ -215,7 +211,7 @@ const DashboardHome = () => {
                             </ListItem>
 
                             <ListItem button>
-                                <HashLink to="/dashboard/addReview" className='text-decoration-none w-100 text-dark fw-bold'>MY WISH LIST</HashLink>
+                                <HashLink to="/dashboard/" className='text-decoration-none w-100 text-dark fw-bold'>MY WISH LIST</HashLink>
                             </ListItem>
                         </>
                     }

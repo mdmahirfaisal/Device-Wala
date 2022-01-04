@@ -8,15 +8,16 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-// import axios from 'axios';
+import axios from 'axios';
 import { Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2'
 import TextField from '@mui/material/TextField';
-import { CircularProgress, Button, useMediaQuery } from '@mui/material';
+import { CircularProgress, Button } from '@mui/material';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import useMediaQuery from '../../Shared/useMediaQuery/useMediaQuery';
 
 const modalStyle = {
     position: 'absolute',
@@ -46,7 +47,7 @@ const ManageProduct = () => {
     const isMobile = useMediaQuery('(max-width: 480px)');
 
     React.useEffect(() => {
-        fetch('https://mysterious-waters-68327.herokuapp.com/products')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setManageProductsAdmin(data))
             .catch(error => Swal.fire({
@@ -77,7 +78,7 @@ const ManageProduct = () => {
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                const url = `https://mysterious-waters-68327.herokuapp.com/products/${id}`;
+                const url = `http://localhost:5000/products/${id}`;
                 fetch(url, {
                     method: 'DELETE'
                 })
@@ -115,16 +116,16 @@ const ManageProduct = () => {
         imageData.set('key', 'b1329658ac9cd12416e1b24f8e686347');
         await imageData.append('image', e.target.files[0])
 
-        // axios.post('https://api.imgbb.com/1/upload',
-        //     imageData)
-        //     .then(response => {
-        //         console.log(response.data.data.display_url);
+        axios.post('https://api.imgbb.com/1/upload',
+            imageData)
+            .then(response => {
+                console.log(response.data.data.display_url);
 
-        //         setProductImg(response.data.data.display_url);
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     });
+                setProductImg(response.data.data.display_url);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     };
     const onSubmit = productData => {
         const data = {
@@ -136,27 +137,27 @@ const ManageProduct = () => {
 
         reset()
         setUploading(true)
-            // axios.post('http://localhost:5000/products', data)
-            //     .then(res => {
-            //         console.log(res);
-            //         setUploading(false)
-            //         if (res.data.insertedId) {
-            //             Swal.fire({
-            //                 position: 'top-center',
-            //                 icon: 'success',
-            //                 title: 'New product added Successfully',
-            //                 showConfirmButton: false,
-            //                 timer: 3000
-            //             })
-            //         }
-            //         else {
-            //             Swal.fire({
-            //                 icon: 'error',
-            //                 title: 'Oops...',
-            //                 text: 'Order placed Canceled!',
-            //             })
-            //         }
-            //     })
+        axios.post('http://localhost:5000/products', data)
+            .then(res => {
+                console.log(res);
+                setUploading(false)
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'New product added Successfully',
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+                }
+                else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Order placed Canceled!',
+                    })
+                }
+            })
             .catch(error => {
                 Swal.fire({
                     icon: 'error',
@@ -248,7 +249,7 @@ const ManageProduct = () => {
                                                                     <Form.Label className="text-start  mt-4">description</Form.Label>
                                                                     <TextareaAutosize
                                                                         aria-label="minimum height"
-                                                                        defaultValue={row?.description.slice(0, 200)}
+                                                                        defaultValue={isMobile ? row?.description.slice(0, 200) : row?.description}
                                                                         minRows={5}
                                                                         placeholder="Description"
                                                                         className="col-12 col-md-12 " style={{ borderRadius: '5px', width: '100%' }} rows={10} {...register("description", { required: true })}
