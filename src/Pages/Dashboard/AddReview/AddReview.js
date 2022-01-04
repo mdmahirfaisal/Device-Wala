@@ -69,7 +69,7 @@ const AddReview = () => {
         };
 
         reset()
-        axios.post('http://localhost:5000/review', data)
+        axios.post('https://powerful-wildwood-39472.herokuapp.com/review', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {

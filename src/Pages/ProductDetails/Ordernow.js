@@ -24,7 +24,7 @@ const Ordernow = () => {
     data.productName = product?.name;
     data.productImg = product?.img;
     data.totalPrice = product?.price;
-    fetch("http://localhost:5000/orders", {
+    fetch("https://powerful-wildwood-39472.herokuapp.com/orders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -41,7 +41,7 @@ const Ordernow = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://powerful-wildwood-39472.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);

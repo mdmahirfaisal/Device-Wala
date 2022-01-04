@@ -41,7 +41,7 @@ const Testomonial = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://powerful-wildwood-39472.herokuapp.com/review')
             .then(res => res.json())
             .then(data => {
                 setAllReviews(data);
