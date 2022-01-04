@@ -47,7 +47,7 @@ const ManageProduct = () => {
     const isMobile = useMediaQuery('(max-width: 480px)');
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://powerful-wildwood-39472.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setManageProductsAdmin(data))
             .catch(error => Swal.fire({
@@ -78,7 +78,7 @@ const ManageProduct = () => {
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                const url = `http://localhost:5000/products/${id}`;
+                const url = `https://powerful-wildwood-39472.herokuapp.com/products/${id}`;
                 fetch(url, {
                     method: 'DELETE'
                 })
@@ -137,7 +137,7 @@ const ManageProduct = () => {
 
         reset()
         setUploading(true)
-        axios.post('http://localhost:5000/products', data)
+        axios.post('https://powerful-wildwood-39472.herokuapp.com/products', data)
             .then(res => {
                 console.log(res);
                 setUploading(false)
