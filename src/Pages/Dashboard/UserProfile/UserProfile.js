@@ -36,7 +36,7 @@ const UserProfile = () => {
             <div className="container" style={{ maxWidth: '650px' }}>
                 <div className="our-team shadow" style={{ borderRadius: '15px' }}>
                     <div className="picture">
-                        <img className="img-fluid" src={user.photoURL || "https://picsum.photos/130/130?image=1027"} alt='Profile img' />
+                        <img className="img-fluid" src={user.photoURL || "https://i.ibb.co/ScbTKWS/admin.png"} alt='Profile img' />
                     </div>
                     <div className="team-content">
                         <h3 className="name">{user.displayName}</h3>

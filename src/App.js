@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
-        
+
           <Routes>
             <Route path="/home" element={<Home />} />
 
@@ -48,7 +48,7 @@ function App() {
 
               <Route path={`/dashboard/addReview`} element={<AddReview></AddReview>} />
 
-              <Route exact path="/dashboard" element={<DashboardChart />} />
+              <Route exact path="/dashboard" element={<UserProfile />} />
 
             </Route>
 
